@@ -1,0 +1,15 @@
+services:
+  restoreclaimpro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: restoreclaimpro:latest
+    container_name: restoreclaimpro
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_SITE_URL: https://restoreclaimpro.com
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+    ports:
+      - "3000:3000"
